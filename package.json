@@ -31,6 +31,7 @@
     ]
   },
   "dependencies": {
+    "cordova-android": "8.1.0",
     "cordova-plugin-compat": "^1.2.0"
   }
 }

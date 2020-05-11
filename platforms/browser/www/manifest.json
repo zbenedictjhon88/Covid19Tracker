@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "COVID-19 Tracker v1",
+  "short_name": "COVID-19 Tracker v1",
+  "version": "com.phonegap.tracker",
+  "description": "COVID-19 Tracker Application to track cases, positive and death.",
+  "author": "John Benedict Santos",
+  "icons": [],
+  "start_url": "index.html"
+}

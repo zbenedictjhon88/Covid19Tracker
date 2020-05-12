@@ -1,3 +1,4 @@
+$.mobile.allowCrossDomainPages = true;
 $(document).ready(function () {
   $("#global").click(function () {
     alert('Global');

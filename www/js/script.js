@@ -5,6 +5,7 @@ $(document).ready(function () {
     alert('Global test');
   
     $.ajax({
+      dataType: 'json',
       type: "GET",
       url: "https://api.thevirustracker.com/free-api?global=stats",
       success: function (response) {

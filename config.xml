@@ -100,6 +100,9 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <access origin="*" />
+        <allow-intent href="*" />
+        <allow-navigation href="*" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

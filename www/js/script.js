@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $("#global").click(function () {
+    alert('debug');
     $.get("components/global/global.html", function (data) {
       $("#global").addClass("w3-theme");
       $("#countries").removeClass("w3-theme");

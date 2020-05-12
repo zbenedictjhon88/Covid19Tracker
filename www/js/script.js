@@ -1,9 +1,9 @@
 $(document).ready(function () {
   $("#global").click(function () {
+    alert('Global');
     $.ajax({
       type: "GET",
       url: "https://api.thevirustracker.com/free-api?global=stats",
-      dataType: "JSON",
       success: function (response) {
         var field = response.results[0];
         alert(field);

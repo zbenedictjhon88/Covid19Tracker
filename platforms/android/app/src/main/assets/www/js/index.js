@@ -44,29 +44,6 @@ var app = {
     listeningElement.setAttribute("style", "display:none;");
     receivedElement.setAttribute("style", "display:block;");
 
-    $.ajax({
-        type: "GET",
-        url: "https://api.thevirustracker.com/free-api?global=stats",
-        dataType: "JSON",
-        success: function (response) {
-          var field = response.results[0];
-          console.log(field);
-          $("#total_cases").html(number_format(field.total_cases, "", "", ","));
-          $("#total_recovered").html(number_format(field.total_recovered, "", "", ","));
-          $("#total_unresolved").html(number_format(field.total_unresolved, "", "", ","));
-          $("#total_deaths").html(number_format(field.total_deaths, "", "", ","));
-          $("#total_new_cases_today").html(number_format(field.total_new_cases_today, "", "", ","));
-          $("#total_new_deaths_today").html(number_format(field.total_new_deaths_today, "", "", ","));
-          $("#total_active_cases").html(number_format(field.total_active_cases, "", "", ","));
-          $("#total_serious_cases").html(number_format(field.total_serious_cases, "", "", ","));
-          $("#total_affected_countries").html(number_format(field.total_affected_countries, "", "", ","));
-          $("#source").html(field.source.url);
-        },
-        error: function (response) {
-          console.log(response);
-        },
-      });
-
     global();
 
     console.log("Received Event: " + id);
@@ -99,6 +76,30 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 function global() {
   $.get("components/global/global.html", function (data) {
+
+    $.ajax({
+        type: "GET",
+        url: "https://api.thevirustracker.com/free-api?global=stats",
+        dataType: "JSON",
+        success: function (response) {
+          var field = response.results[0];
+          console.log(field);
+          $("#total_cases").html(number_format(field.total_cases, "", "", ","));
+          $("#total_recovered").html(number_format(field.total_recovered, "", "", ","));
+          $("#total_unresolved").html(number_format(field.total_unresolved, "", "", ","));
+          $("#total_deaths").html(number_format(field.total_deaths, "", "", ","));
+          $("#total_new_cases_today").html(number_format(field.total_new_cases_today, "", "", ","));
+          $("#total_new_deaths_today").html(number_format(field.total_new_deaths_today, "", "", ","));
+          $("#total_active_cases").html(number_format(field.total_active_cases, "", "", ","));
+          $("#total_serious_cases").html(number_format(field.total_serious_cases, "", "", ","));
+          $("#total_affected_countries").html(number_format(field.total_affected_countries, "", "", ","));
+          $("#source").html(field.source.url);
+        },
+        error: function (response) {
+          console.log(response);
+        },
+      });
+
     $("#global").addClass("w3-theme");
     $("main").html(data);
     $.getScript("components/global/global.js");

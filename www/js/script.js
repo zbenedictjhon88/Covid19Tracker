@@ -6,7 +6,7 @@ $(document).ready(function () {
       dataType: "JSON",
       success: function (response) {
         var field = response.results[0];
-        console.log(field);
+        alert(field);
         $("#total_cases").html(number_format(field.total_cases, "", "", ","));
         $("#total_recovered").html(number_format(field.total_recovered, "", "", ","));
         $("#total_unresolved").html(number_format(field.total_unresolved, "", "", ","));
@@ -22,7 +22,7 @@ $(document).ready(function () {
         console.log(response);
       },
     });
-    
+
     $.get("components/global/global.html", function (data) {
       $("#global").addClass("w3-theme");
       $("#countries").removeClass("w3-theme");

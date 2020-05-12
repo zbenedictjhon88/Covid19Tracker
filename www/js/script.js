@@ -2,7 +2,7 @@
 $(document).ready(function () {
   $("#global").click(function () {
 
-    alert('Global');
+    alert('Global test');
   
     $.ajax({
       type: "GET",

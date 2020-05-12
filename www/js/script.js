@@ -2,7 +2,7 @@
 $(document).ready(function () {
   $("#global").click(function () {
 
-    alert('Global test');
+    alert('Global test 0001');
   
     $.ajax({
       dataType: 'json',

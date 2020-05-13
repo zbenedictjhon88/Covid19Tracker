@@ -45,7 +45,7 @@ var app = {
     receivedElement.setAttribute("style", "display:block;");
 
     $.get("components/global/global.html", function (data) {
-      global();
+      world();
       $("#global").addClass("w3-theme");
       $("main").html(data);
     });

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $("#global").click(function () {
-    global();
+    world();
     $.get("components/global/global.html", function (data) {
       $("#global").addClass("w3-theme");
       $("#countries").removeClass("w3-theme");
@@ -23,7 +23,7 @@ $(document).ready(function () {
 });
 
 
-function global(){
+function world(){
   $.ajax({
     type: "GET",
     url: "https://api.thevirustracker.com/free-api?global=stats",

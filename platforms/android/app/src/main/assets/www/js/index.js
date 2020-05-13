@@ -44,15 +44,13 @@ var app = {
     listeningElement.setAttribute("style", "display:none;");
     receivedElement.setAttribute("style", "display:block;");
 
-    global();
+    $.get("components/global/global.html", function (data) {
+      global();
+      $("#global").addClass("w3-theme");
+      $("main").html(data);
+    });
   },
 };
 
-function global() {
-  $.getScript("../components/global/global.js");
-  $.get("components/global/global.html", function (data) {
-    $("#global").addClass("w3-theme");
-    $("main").html(data);
-  });
-}
+
 

@@ -6,7 +6,7 @@ $(document).ready(function () {
     url: "https://coronavirus-19-api.herokuapp.com/countries ",
     dataType: "JSON",
     success: function (response) {
-      for (let i = 1; i < response.length; i++){
+      for (let i = 1; i < 5; i++){
         $('#country').append(
           '<div class="w3-theme-l2 w3-container w3-padding-16 w3-margin-bottom w3-margin-top">' +
           '<label>Country:</label> <span class="w3-right">' + number_format(response[i].country, "", "", ",") + '</span><br>' +

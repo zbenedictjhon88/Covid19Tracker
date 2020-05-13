@@ -1,67 +1,19 @@
-
 $(document).ready(function () {
   $("#global").click(function () {
-    $.ajax({
-      type: "GET",
-      url: "https://api.thevirustracker.com/free-api?global=stats",
-      dataType: "JSON",
-      success: function (response) {
-        var field = response.results[0];
-        $("#total_cases").html(number_format(field.total_cases, "", "", ","));
-        $("#total_recovered").html(number_format(field.total_recovered, "", "", ","));
-        $("#total_unresolved").html(number_format(field.total_unresolved, "", "", ","));
-        $("#total_deaths").html(number_format(field.total_deaths, "", "", ","));
-        $("#total_new_cases_today").html(number_format(field.total_new_cases_today, "", "", ","));
-        $("#total_new_deaths_today").html(number_format(field.total_new_deaths_today, "", "", ","));
-        $("#total_active_cases").html(number_format(field.total_active_cases, "", "", ","));
-        $("#total_serious_cases").html(number_format(field.total_serious_cases, "", "", ","));
-        $("#total_affected_countries").html(number_format(field.total_affected_countries, "", "", ","));
-        $("#source").html(field.source.url);
-      },
-      error: function (response) {
-        alert('Error Response');
-      },
-    });
-
+    $.getScript("../components/global/global.js");
     $.get("components/global/global.html", function (data) {
       $("#global").addClass("w3-theme");
       $("#countries").removeClass("w3-theme");
       $("main").html(data);
-      //$.getScript("../components/global/global.js");
     });
   });
 
   $("#countries").click(function () {
-    $.ajax({
-      type: "GET",
-      url: "https://coronavirus-19-api.herokuapp.com/countries ",
-      dataType: "JSON",
-      success: function (response) {
-        for (let i = 1; i < 5; i++){
-          $('#country').append(
-            '<div class="w3-theme-l2 w3-container w3-padding-16 w3-margin-bottom w3-margin-top">' +
-            '<label>Country:</label> <span class="w3-right">' + number_format(response[i].country, "", "", ",") + '</span><br>' +
-            '<label>Cases:</label> <span class="w3-right">' + number_format(response[i].cases, "", "", ",") + '</span><br>' +
-            '<label>Active:</label> <span class="w3-right">' + number_format(response[i].active, "", "", ",") + '</span><br>' +
-            '<label>Recovered:</label> <span class="w3-right">' + number_format(response[i].recovered, "", "", ",") + '</span><br>' +
-            '<label>Critical:</label> <span class="w3-right">' + number_format(response[i].critical, "", "", ",") + '</span><br>' +
-            '<label>Deaths:</label> <span class="w3-right">' + number_format(response[i].deaths, "", "", ",") + '</span><br>' +
-            '<label>Today Cases:</label> <span class="w3-right">' + number_format(response[i].todayCases, "", "", ",") + '</span><br>' +
-            '<label>Today Deaths:</label> <span class="w3-right">' + number_format(response[i].todayDeaths, "", "", ",") + '</span><br>' +
-            '</div>'
-          );
-        }
-      },
-      error: function (response) {
-        alert('Error Response');
-      },
-    });
-
+    $.getScript("../components/countries/countries.js");
     $.get("components/countries/countries.html", function (data) {
       $("#countries").addClass("w3-theme");
       $("#global").removeClass("w3-theme");
-      $("main").html(data);
-      //$.getScript("../components/countries/countries.js");
+      $("main").html(data);      
     });
   });
 });

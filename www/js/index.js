@@ -57,7 +57,6 @@ function global() {
     dataType: "JSON",
     success: function (response) {
       var field = response.results[0];
-      console.log(field);
       $("#total_cases").html(number_format(field.total_cases, "", "", ","));
       $("#total_recovered").html(number_format(field.total_recovered, "", "", ","));
       $("#total_unresolved").html(number_format(field.total_unresolved, "", "", ","));
@@ -70,9 +69,10 @@ function global() {
       $("#source").html(field.source.url);
     },
     error: function (response) {
-      console.log(response);
+      alert('Error Response: ' + response);
     },
   });
+
   $.get("components/global/global.html", function (data) {
     $("#global").addClass("w3-theme");
     $("main").html(data);

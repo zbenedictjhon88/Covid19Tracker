@@ -1,16 +1,12 @@
 
 $(document).ready(function () {
   $("#global").click(function () {
-
-    alert('Global test 0001');
-  
     $.ajax({
       dataType: 'json',
       type: "GET",
       url: "https://api.thevirustracker.com/free-api?global=stats",
       success: function (response) {
         var field = response.results[0];
-        alert(field);
         $("#total_cases").html(number_format(field.total_cases, "", "", ","));
         $("#total_recovered").html(number_format(field.total_recovered, "", "", ","));
         $("#total_unresolved").html(number_format(field.total_unresolved, "", "", ","));
@@ -23,7 +19,7 @@ $(document).ready(function () {
         $("#source").html(field.source.url);
       },
       error: function (response) {
-        console.log(response);
+        alert('Error Response: ' + response);
       },
     });
 

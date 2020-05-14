@@ -44,13 +44,17 @@ var app = {
     listeningElement.setAttribute("style", "display:none;");
     receivedElement.setAttribute("style", "display:block;");
 
-    $.get("components/global/global.html", function (data) {
-      global();
-      $("#global").addClass("w3-theme");
-      $("main").html(data);
-    });
+    $('#loading').addClass('active');
+    home();
   },
 };
 
-
-
+function home() {
+  $('#home').addClass('active');
+  M.toast({html: "Hello! i'm Covid Tracker."})
+  $.get("components/home/home.html", function (data) {
+    $('#preload').addClass('displayNo');
+    $('#loading').removeClass('active');
+    $("main").html(data);
+  });
+}

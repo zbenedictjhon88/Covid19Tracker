@@ -6,43 +6,60 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 
-        <link rel="stylesheet" type="text/css" href="css/w3.css" />
-        <link rel="stylesheet" type="text/css" href="css/themes.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="lib/materialize/css/materialize.min.css" />
         <link rel="stylesheet" type="text/css" href="fonts/material-design-icons/material-icons.css" />
-        
+
         <title>Covid-19 Tracker</title>
     </head>
 
-    <body class="w3-theme-l4" id="deviceready">
+    <body id="deviceready">
         <div class="listening">
             <i>Connecting to Device</i>
         </div>
         <div class="received">
-            <header class="w3-bar w3-theme">
-                <h4 class="w3-bar-item">COVID-19 Tracker</h4>
-            </header>
-            <div class="w3-bar w3-theme-l1 w3-margin-bottom">    
-                <a id="countries" class="w3-bar-item w3-button w3-right w3-hover-theme">Countries</a>         
-                <a id="global" class="w3-bar-item w3-button w3-right w3-hover-theme">Global</a>                
-            </div>
+            <nav>
+                <div class="nav-wrapper">  
+                    <img class="brand-logo left" src="../res/icon/android/drawable-hdpi-icon.png">
+                    <a href="#" class="brand-logo right"><b>NovelCovid-19 Tracker</b></a>
+                </div>
+            </nav>
+            <nav class="nav-extended">
+                <div class="nav-content">
+                    <ul class="tabs tabs-transparent">
+                    <li class="tab"><a id="home" href="#"><i class="material-icons">home</i></a></li>
+                    <li class="tab"><a id="global" href="#"><i class="material-icons">language</i></a></li>
+                    <li class="tab"><a id="countries" href="#"><i class="material-icons">flag</i></a></li>
+                    <li class="tab"><a id="about" href="#"><i class="material-icons">error</i></a></li>
+                    </ul>
+                </div>
+            </nav>
 
-            <div class="w3-container">
-                <main></main>
-            </div>
-
-            <div class="w3-bottom">
-                <div class="w3-bar">
-                    <a href="#" class="w3-bar-item w3-button">Made by JBS.</a>
-                    <a href="#" class="w3-bar-item w3-button w3-right">
-                        <small>v1</small>
-                    </a>
+            <div id="preload">
+                <div id="loading" class="preloader-wrapper active">
+                    <div class="spinner-layer spinner-red-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <main></main>
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/materialize/js/materialize.min.js"></script>
+        <script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/countries.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

@@ -1,0 +1,17 @@
+.displayNo {
+    display: none !important;
+}
+.displayYes {
+    display: block !important;
+}
+#preload {
+    text-align: center;
+    margin-top: 150px;
+}
+.card-title {
+    width: 100%;
+    font-weight: 700 !important;
+    background-color: #203347 !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}

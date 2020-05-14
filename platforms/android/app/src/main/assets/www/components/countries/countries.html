@@ -1,8 +1,17 @@
-<header class="w3-container w3-theme-d1">
-        <h4>Coronavirus by Country</h4>
-</header>
+<nav>
+  <div class="nav-wrapper">
+    <div class="input-field">
+      <input onchange="country(this.value)" id="search_country" type="search" required>
+      <label class="label-icon" for="search_country"><i class="material-icons">search</i></label>
+      <i class="material-icons">close</i>
+    </div>
+  </div>
+</nav>
 
-<input type="text" placeholder="Search.." id="search_country" class="w3-input w3-border w3-light-grey w3-small">
-<div id="country_result"></div>
-<div id="country"></div>
-
+<div class="row">
+  <div class="col s12 m7">
+    <h5 class="black-text">Coronavirus by Country</h5>
+    <div id="country_result"></div>
+    <div id="country"></div>
+  </div>
+</div>
